@@ -1,0 +1,6 @@
+CREATE TABLE Employee
+( 
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  name char(30) NOT NULL,
+  DOB date
+);
