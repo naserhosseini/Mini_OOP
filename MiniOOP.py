@@ -28,7 +28,7 @@ class Employee:
             self.id=row[0]
         return
 
-    def UpdateEmployee(self,new_date,new_address=None,new_phone=None,new_email=None,new_salary=None):
+    def UpdateEmployee(self,new_date,new_address=None,new_phone=None,new_email=None,position=None,manager_id=None,new_salary=None):
         '''
         for update the employee by employee id.
         :param new_date:
@@ -36,6 +36,8 @@ class Employee:
         :param new_email:
         :param new_salary:
         :param new_phone:
+        :param position:
+        :param manager_id:
         :return:
         '''
         self.update_date=new_date
@@ -57,8 +59,15 @@ class Employee:
             _col+= ', ' + 'salary'
             _val += ', {}'.format(new_salary)
         if new_phone:
-            _col+= ', ' + 'phone'
+            _col += ', ' + 'phone'
             _val += ', "{}"'.format(new_phone)
+        if position:
+            _col += ', ' + 'position'
+            _val += ', "{}"'.format(position)
+        if manager_id:
+            _col += ', ' + 'manager_id'
+            _val += ', "{}"'.format(manager_id)
+
         _sql='INSERT update_employee ({}) VALUES ({});'.format(_col,_val)
         mycrs.execute(_sql)
         cnx.commit()
