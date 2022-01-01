@@ -1,0 +1,5 @@
+CREATE TABLE position
+( 
+  id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  description CHAR(10)
+)

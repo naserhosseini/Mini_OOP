@@ -6,5 +6,7 @@ CREATE TABLE update_employee
   address char(200),
   email char(50),
   phone char(13),
+  position INT,
+  manager_id int,
   salary int
 );
