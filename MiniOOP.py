@@ -28,6 +28,7 @@ class Employee:
             self.id=row[0]
         return
 
+    
     def UpdateEmployee(self,new_date,new_address=None,new_phone=None,new_email=None,position=None,manager_id=None,new_salary=None):
         '''
         for update the employee by employee id.
@@ -97,6 +98,7 @@ class Order:
         mycrs.execute(_sql)
         cnx.commit()
 
+        
     def ongoing_orders(self):
         _sql='SELECT * FROM orders WHERE delivery<"{}" AND delivery>"{}" AND status=0'.format(datetime.now().date()+timedelta(days=5),datetime.now().date())
         mycrs.execute(_sql)
